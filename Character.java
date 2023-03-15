@@ -1,0 +1,66 @@
+public abstract class Character {
+    protected int attack;
+    protected int defense;
+    protected int shots;
+    protected int damage;
+    protected int health;
+    protected int speed;
+    protected int delivery;
+    protected int magic;
+
+    public Character(int attack, int defense, int shots, int damage, int health, int speed, int delivery, int magic) {
+        this.attack = attack;
+        this.defense = defense;
+        this.shots = shots;
+        this.damage = damage;
+        this.health = health;
+        this.speed = speed;
+        this.delivery = delivery;
+        this.magic = magic;
+    }
+
+    public String getDescription() {
+        return  this.getClass().getSimpleName() + ": " +
+                "attack: " + attack +
+                ", defense: " + defense +
+                ", shots: " + shots +
+                ", damage: " + damage +
+                ", health: " + health +
+                ", speed: " + speed +
+                ", delivery: " + delivery +
+                ", magic: " + magic;
+    }
+
+    public int getAttack() {
+        return attack;
+    }
+
+    public int getDefense() {
+        return defense;
+    }
+
+    public int getShots() {
+        return shots;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public int getDelivery() {
+        return delivery;
+    }
+
+    public int getMagic() {
+        return magic;
+    }
+
+}
