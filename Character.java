@@ -1,3 +1,5 @@
+import java.awt.Point;
+
 public abstract class Character {
     protected int attack;
     protected int defense;
@@ -7,8 +9,10 @@ public abstract class Character {
     protected int speed;
     protected int delivery;
     protected int magic;
+    protected int arrows;
+    protected Point position;
 
-    public Character(int attack, int defense, int shots, int damage, int health, int speed, int delivery, int magic) {
+    public Character(int attack, int defense, int shots, int damage, int health, int speed, int delivery, int magic, int arrows, Point position) {
         this.attack = attack;
         this.defense = defense;
         this.shots = shots;
@@ -17,6 +21,8 @@ public abstract class Character {
         this.speed = speed;
         this.delivery = delivery;
         this.magic = magic;
+        this.arrows = arrows;
+        this.position = position;
     }
 
     public String getDescription() {
@@ -29,6 +35,13 @@ public abstract class Character {
                 ", speed: " + speed +
                 ", delivery: " + delivery +
                 ", magic: " + magic;
+    }
+
+    public void takeDamage(int damage) {
+        health -= damage;
+        if (health < 0) {
+            health = 0;
+        }
     }
 
     public int getAttack() {
@@ -61,6 +74,10 @@ public abstract class Character {
 
     public int getMagic() {
         return magic;
+    }
+
+    public Point getPosition() {
+        return position;
     }
 
 }

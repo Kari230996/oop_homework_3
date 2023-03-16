@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.awt.Point;
 
 /**
  * Main
@@ -11,8 +12,17 @@ public class Main {
         List<Character> list1 = new ArrayList<>();
         List<Character> list2 = new ArrayList<>();
 
-        Character[] characters = { new Peasant(), new Bandit(), new Sniper(), new Crossbowman(), new Spearman(),
-                new Magician(), new Monk() };
+        Point p1 = new Point(0, 0);
+        Point p2 = new Point(3, 4);
+        Point p3 = new Point(2, 7);
+        Point p4 = new Point(3, 5);
+        Point p5 = new Point(1, 4);
+        Point p6 = new Point(3, 2);
+        Point p7 = new Point(6, 1);
+
+        Character[] characters = { new Peasant(p1), new Bandit(p2), new Sniper(p3), new Crossbowman(p4),
+                new Spearman(p5),
+                new Magician(p6), new Monk(p7) };
 
         Random random = new Random();
         for (int i = 0; i < 10; i++) {
@@ -36,6 +46,7 @@ public class Main {
         // выводим информацию обо всех персонажах
         for (Character character : allCharacters) {
             System.out.println(character.getDescription());
+
         }
 
     }
